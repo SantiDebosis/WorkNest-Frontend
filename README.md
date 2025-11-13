@@ -1,16 +1,77 @@
-# React + Vite
+# WorkNest - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el repositorio del frontend para la aplicación de gestión de tareas "WorkNest".
+Es una aplicación web desarrollada para la gestión de tareas y proyectos, la cual implementa el modelo Kanban. El objetivo de WorkNest es permitir una organización visual del trabajo. La aplicación le permite a los usuarios:
 
-Currently, two official plugins are available:
+- **Crear Tableros, que representan los proyectos.**
+- **Definir Columnas dentro de esos tableros, que representan las etapas del flujo (por ejemplo: "Pendiente", "En Proceso", "Hecho").**
+- **Y añadir Tarjetas, que son las tareas individuales.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La funcionalidad clave es que estas tarjetas se pueden arrastrar y soltar (drag and drop) entre las columnas. Esto permite que un usuario o un equipo pueda ver, de un solo vistazo, el estado exacto de cada tarea. En resumen, WorkNest es una herramienta para centralizar y visualizar el progreso de un proyecto de forma clara y sencilla.
 
-## React Compiler
+## Tecnologias Utilizadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Frontend
 
-## Expanding the ESLint configuration
+- **REACT(JSX,JS)**
+- **TailwindCSS**
+- **Axios**
+- **Wouter**
+- **Zod**
+- **Ract-Hook-Form**
+- **Dnd-Kit (drag and drop)**
+- **Lucide React (iconos**)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Configuración
+
+Antes de instalar las dependencias, hay que configurar la variable de entorno que indica dónde se encuentra la API de backend.
+
+1.  En la raíz del proyecto, crea un archivo llamado `.env` (puedes duplicar y renombrar `.env.example` si existe).
+2.  Abre el archivo `.env` y agrega la siguiente línea:
+
+    ```bash
+    VITE_API_URL=https://localhost:7007/api
+    ```
+
+    **Importante:** Esta https://localhost:7007/api es la URL del backend
+
+---
+
+## Instalación
+
+Para poner en marcha el proyecto en tu máquina local, sigue estos pasos:
+
+1.  **Clonar el repositorio**
+
+    ```bash
+    git clone [URL-DEL-REPOSITORIO]
+    cd [NOMBRE-DEL-DIRECTORIO]
+    ```
+
+2.  **Instalar dependencias**
+
+    ```bash
+    npm install
+    ```
+
+---
+
+## Build para Producción
+
+Para compilar y optimizar la aplicación para producción:
+
+1.  **Crear la build:**
+
+    ```bash
+    npm run build
+    ```
+
+2.  **Previsualizar la build (Opcional):**
+    Si deseas probar la build de producción localmente antes de desplegarla:
+    ```bash
+    npm run preview
+    ```
+
+El back espera la URL http://localhost:4173/
