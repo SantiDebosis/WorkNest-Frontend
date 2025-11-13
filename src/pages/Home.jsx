@@ -23,7 +23,7 @@ export default function HomePage() {
         ) : (
           <Link href="/register">
             <Button variant="primary" className="text-lg px-8 py-3 bg-[#ffb703] hover:bg-[#fb8500] text-[#023047] font-bold transition duration-300">
-              Comienza Gratis
+              Comienza Ahora
             </Button>
           </Link>
         )}
