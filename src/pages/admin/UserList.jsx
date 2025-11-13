@@ -27,15 +27,6 @@ export default function UserListPage() {
   if (loading) return <Spinner />;
   if (error) return <p className="text-red-500">{error}</p>;
 
-  const getRoleColors = (role) => {
-    switch (role) {
-      case 'Admin':
-        return 'bg-[#fb8500]/20 text-[#fb8500]';
-      default:
-        return 'bg-[#219ebc]/20 text-[#023047]'; 
-    }
-  };
-
   return (
     <div>
       <h1 className="text-3xl font-bold mb-6 text-[#023047]">Gestión de Usuarios</h1>
@@ -43,27 +34,22 @@ export default function UserListPage() {
         <table className="min-w-full divide-y divide-[#8ecae6]">
           <thead className="bg-[#8ecae6]/30">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#023047] uppercase">ID</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#023047] uppercase">Usuario</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#023047] uppercase">Email</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#023047] uppercase">Roles</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-[#023047] uppercase">
+                Usuario
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-[#023047] uppercase">
+                Email
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-[#8ecae6]">
             {users.map(user => (
               <tr key={user.id}>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-[#219ebc]">{user.id}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#023047]">{user.userName}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-[#219ebc]">{user.email}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {user.roles.map(role => (
-                    <span 
-                      key={role} 
-                      className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getRoleColors(role)}`}
-                    >
-                      {role}
-                    </span>
-                  ))}
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#023047]">
+                  {user.userName}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-[#219ebc]">
+                  {user.email}
                 </td>
               </tr>
             ))}
