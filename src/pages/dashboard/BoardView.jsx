@@ -4,7 +4,7 @@ import api from '../../lib/api';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import BoardColumn from '../../components/board/BoardColumn';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext.jsx';
 import Button from '../../components/ui/Button';
 import CreateTaskModal from '../../components/board/CreateTaskModal';
 import { Plus } from 'lucide-react';
@@ -19,7 +19,7 @@ export default function BoardViewPage() {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const { isAdminOrMod } = useAuth();
+  const { isAdmin } = useAuth();
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -36,7 +36,7 @@ export default function BoardViewPage() {
       setBoard(data);
       setColumns(data.columns);
       const tasksByColumn = data.columns.reduce((acc, col) => {
-        col.tasks.sort((a,b) => a.id - b.id);
+        col.tasks.sort((a,b) => a.id - b.id); 
         acc[col.id] = col.tasks;
         return acc;
       }, {});
@@ -108,7 +108,7 @@ export default function BoardViewPage() {
               className="block w-full md:w-64 px-4 py-2 border border-[#219ebc]/50 rounded-md shadow-sm bg-white text-black focus:outline-none focus:ring-[#219ebc] focus:border-[#219ebc] sm:text-sm"
             />
           </div>
-          {isAdminOrMod && (
+          {isAdmin && (
             <Button 
               variant="primary" 
               onClick={() => setIsModalOpen(true)}

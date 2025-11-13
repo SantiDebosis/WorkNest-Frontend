@@ -31,8 +31,6 @@ export default function UserListPage() {
     switch (role) {
       case 'Admin':
         return 'bg-[#fb8500]/20 text-[#fb8500]';
-      case 'Mod':
-        return 'bg-[#ffb703]/20 text-[#ffb703]';
       default:
         return 'bg-[#219ebc]/20 text-[#023047]'; 
     }

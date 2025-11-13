@@ -1,6 +1,13 @@
 # WorkNest - Frontend
 
 Este es el repositorio del frontend para la aplicación de gestión de tareas "WorkNest".
+Es una aplicación web desarrollada para la gestión de tareas y proyectos, la cual implementa el modelo Kanban. El objetivo de WorkNest es permitir una organización visual del trabajo. La aplicación le permite a los usuarios:
+
+- **Crear Tableros, que representan los proyectos.**
+- **Definir Columnas dentro de esos tableros, que representan las etapas del flujo (por ejemplo: "Pendiente", "En Proceso", "Hecho").**
+- **Y añadir Tarjetas, que son las tareas individuales.**
+
+La funcionalidad clave es que estas tarjetas se pueden arrastrar y soltar (drag and drop) entre las columnas. Esto permite que un usuario o un equipo pueda ver, de un solo vistazo, el estado exacto de cada tarea. En resumen, WorkNest es una herramienta para centralizar y visualizar el progreso de un proyecto de forma clara y sencilla.
 
 ## Stack Tecnológico
 
@@ -12,6 +19,16 @@ Este es el repositorio del frontend para la aplicación de gestión de tareas "W
 - **Formularios:** React Hook Form (https://react-hook-form.com/) y Zod(https://zod.dev/)
 - **Drag & Drop:** Dnd-Kit (https://dndkit.com/)
 - **Iconos:** Lucide React (https://lucide.dev/)
+
+## Tecnologias Utilizadas
+
+### Frontend
+
+- **REACT(JSX,JS)**
+
+### Backend
+
+- **C# Y SQLServer**
 
 ---
 

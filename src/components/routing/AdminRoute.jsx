@@ -3,7 +3,7 @@ import { Redirect } from 'wouter';
 import Spinner from '../ui/Spinner';
 
 export default function AdminRoute({ children }) {
-  const { isLoggedIn, isAdminOrMod, loading } = useAuth();
+  const { isLoggedIn, isAdmin, loading } = useAuth();
 
   if (loading) {
     return <Spinner fullPage />;
@@ -13,7 +13,7 @@ export default function AdminRoute({ children }) {
     return <Redirect to={`/login?redirect=${window.location.pathname}`} />;
   }
   
-  if (!isAdminOrMod) {
+  if (!isAdmin) {
     return <Redirect to="/dashboard" />;
   }
 

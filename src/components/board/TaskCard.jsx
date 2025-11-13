@@ -20,7 +20,7 @@ export default function TaskCard({ task, index, onTaskDelete }) {
     opacity: isDragging ? 0.5 : 1,
   };
 
-  const { isAdminOrMod } = useAuth();
+  const { isAdmin } = useAuth();
 
   const handleDelete = async (e) => {
     e.stopPropagation();
@@ -52,7 +52,7 @@ export default function TaskCard({ task, index, onTaskDelete }) {
           {task.name}
         </span>
         <div className="flex-shrink-0 flex items-center">
-          {isAdminOrMod && (
+          {isAdmin && (
             <button
               onClick={handleDelete}
               className="text-[#8ecae6] hover:text-[#fb8500] p-1"

@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }) => {
     user,
     token,
     isLoggedIn: !!token, 
-    isAdminOrMod: user?.roles?.includes('Admin') || user?.roles?.includes('Mod'),
+    isAdmin: user?.roles?.includes('Admin'),
     login,
     register,
     logout,

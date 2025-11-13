@@ -17,7 +17,7 @@ export default function BoardListPage() {
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { isAdminOrMod } = useAuth();
+  const { isAdmin } = useAuth();
 
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm({
     resolver: zodResolver(createBoardSchema),
@@ -74,7 +74,7 @@ export default function BoardListPage() {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-[#023047]">Mis Tableros</h1> 
-        {isAdminOrMod && (
+        {isAdmin && (
           <Button 
             variant="primary" 
             onClick={() => setIsModalOpen(true)}
@@ -90,7 +90,7 @@ export default function BoardListPage() {
         {boards.map(board => (
           <Link key={board.id} href={`/board/${board.id}`}>
             <a className="relative block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
-              {isAdminOrMod && (
+              {isAdmin && (
                 <button
                   onClick={(e) => handleDeleteBoard(e, board.id, board.name)}
                   className="absolute top-2 right-2 text-[#8ecae6] hover:text-[#fb8500] p-1 rounded-full hover:bg-red-100/50 transition-colors"

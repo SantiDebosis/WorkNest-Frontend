@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 import { LogOut, LayoutDashboard, Users, BarChart3 } from 'lucide-react';
 
 export default function Navbar() {
-  const { isLoggedIn, isAdminOrMod, user, logout } = useAuth();
+  const { isLoggedIn, isAdmin, user, logout } = useAuth();
   const [, setLocation] = useLocation();
 
   const handleLogout = async () => {
@@ -26,7 +26,7 @@ export default function Navbar() {
                 Tableros
               </NavLink>
               
-              {isAdminOrMod && (
+              {isAdmin && (
                 <>
                   <NavLink href="/admin/statistics">
                     <BarChart3 size={18} className="mr-1 text-white" />
